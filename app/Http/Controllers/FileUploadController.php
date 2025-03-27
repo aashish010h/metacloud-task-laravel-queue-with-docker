@@ -23,8 +23,21 @@ class FileUploadController extends Controller
         ProcessMobileNumbers::dispatch($filePath->getPathname());
         return response()->json(['message' => 'File uploaded and processing started.']);
     }
-    public function get()
+    public function getMobileNumbers()
     {
-        dd(MobileNumber::count());
+        try {
+            $mobileNumbers = MobileNumber::all();
+
+            return response()->json([
+                'success' => true,
+                'data' => $mobileNumbers
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to retrieve mobile numbers',
+                'error' => $e->getMessage()
+            ], 500);
+        }
     }
 }

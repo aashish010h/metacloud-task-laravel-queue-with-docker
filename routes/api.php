@@ -10,4 +10,4 @@ Route::get('/user', function (Request $request) {
 
 
 Route::post('upload-excel-file', [FileUploadController::class, 'uploadFile']);
-Route::get('getall', [FileUploadController::class, 'get']);
+Route::get('get-mobile-numbers', [FileUploadController::class, 'getMobileNumbers']);
