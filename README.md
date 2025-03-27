@@ -46,7 +46,22 @@ php artisan queue:work
 ```
 
 The endpoint to test the file upload is  `http://localhost:8012/api/upload-excel-file` Make sure the header of column is mobile_number for csv or excel.
+### API testing insrutions
+Set Header in the postman : Accept: application/json
+Content-Type: multipart/form-data
 
+The the body formdata: 
+Key: excelFile
+Type: File
+Value: (Select your Excel or CSV file)
+
+To check the uploaded data `http://localhost:8012/api/get-mobile-numbers`
+```
+composer install
+php artisan key:generate
+php artisan migrate
+
+```
 ## Additional Information
 
 - Laravel documentation: [https://laravel.com/docs](https://laravel.com/docs)
