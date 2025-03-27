@@ -45,7 +45,7 @@ php artisan queue:work
 
 ```
 
-The endpoint to test the file upload is  `http://localhost:8012` 
+The endpoint to test the file upload is  `http://localhost:8012/api/upload-excel-file` Make sure the header of column is mobile_number for csv or excel.
 
 ## Additional Information
 
