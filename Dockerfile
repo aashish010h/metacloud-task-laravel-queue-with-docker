@@ -30,8 +30,6 @@ WORKDIR /var/www/html
 # Copy existing application directory contents
 COPY . /var/www/html
 
-# Install application dependencies
-RUN composer install --no-interaction
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage
