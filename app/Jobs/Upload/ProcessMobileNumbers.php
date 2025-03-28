@@ -30,6 +30,8 @@ class ProcessMobileNumbers implements ShouldQueue
         }
         try {
             Excel::import(new MobileNumbersImport, $this->filePath);
+            Log::info("File processed successfully: {$this->filePath}");
+            unlink($this->filePath);
         } catch (\Exception $e) {
             Log::error('File processing failed: ' . $e->getMessage());
         }
